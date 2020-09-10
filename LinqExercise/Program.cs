@@ -24,10 +24,33 @@ namespace LinqExercise
              */
 
             //Print the Sum and Average of numbers
-
+            var sum = numbers.Sum();
+            var avg = numbers.Average();
+            Console.WriteLine($"Sum; {sum}");
+            Console.WriteLine($"Average: {avg}");
             //Order numbers in ascending order and decsending order. Print each to console.
+            var ascend = numbers.OrderBy(num => num);
+            Console.WriteLine($"Ascending: {ascend}");
+            foreach(var num in ascend)
+            {
+                Console.WriteLine(num);
+            }
+
+            var descend = numbers.OrderByDescending(x => x);
+            Console.WriteLine($"Descending: {descend}");
+            foreach (var num in descend)
+            {
+                Console.WriteLine(num);
+            }
 
             //Print to the console only the numbers greater than 6
+            var bigSix = numbers.Where(num => num > 6);
+
+            Console.WriteLine("Greater then six:");
+            foreach (var item  in bigSix)
+            {
+                Console.WriteLine(item);
+            }
 
             //Order numbers in any order (acsending or desc) but only print 4 of them **foreach loop only!**
 
